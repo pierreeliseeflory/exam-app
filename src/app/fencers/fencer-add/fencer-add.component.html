@@ -1,0 +1,24 @@
+<form autocomplete="off" #form="ngForm" (ngSubmit)="addFencer(form)">
+    <h3>Add a fencer</h3>
+    <fieldset>
+        <div class="form-group form-row">
+            <input type="hidden" ngModel name="id">
+            <div class="col-md-6 col-12">
+                <label for="name">Name of the fencer</label>
+                <input type="text" ngModel name="name" id="name" class="form-control" placeholder="Name" required #name="ngModel">
+            </div>
+            <div class="col-md-6 col-12">
+                <label for="level">Select his level</label>
+                <select name="level" ngModel class="custom-select shadow mb-5 bg-white rounded" id="level" required #level="ngModel">
+                    <option selected disabled value="">--- Empty ---</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="pro">Pro</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-group" *ngIf="name.valid && level.valid">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </fieldset>
+</form>

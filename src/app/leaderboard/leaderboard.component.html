@@ -1,0 +1,7 @@
+<ul class="list-group col-md-7">
+    <li *ngFor="let fencer of leaderBoard; index as i" class="list-group-item  d-flex justify-content-between align-items-center">
+        <b>{{i+1}}</b><span>{{fencer}}</span>
+    </li>
+</ul>
+
+<button class="btn btn-primary" (click)="getRanking()">Get leaderboard</button>

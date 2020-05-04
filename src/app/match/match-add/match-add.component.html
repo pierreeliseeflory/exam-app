@@ -1,0 +1,36 @@
+<form autocomplete="off" #form="ngForm" (ngSubmit)="addMatch(form)">
+    <h3>Add a match</h3>
+    <fieldset>
+        <legend>Select the fencers</legend>
+        <div class="form-group form-row">
+            <input type="hidden" ngModel name="id">
+            <div class="col-md-6 col-12">
+                <label for="fencer1_id">Select fencer n°1</label>
+                <select name="fencer1_id" ngModel class="custom-select shadow mb-5 bg-white rounded" id="fencer1_id" required #fencer1_id="ngModel">
+                    <option selected disabled value="">--- Empty ---</option>
+                    <option *ngFor="let fencer of fencers" value={{fencer.id}}>{{fencer.name}}</option>
+                </select>
+            </div>
+            <div class="col-md-6 col-12">
+                <label for="fencer2_id">Select fencer n°1</label>
+                <select name="fencer2_id" ngModel class="custom-select shadow mb-5 bg-white rounded" id="fencer2_id" required #fencer2_id="ngModel">
+                    <option selected disabled value="">--- Empty ---</option>
+                    <ng-container *ngFor="let fencer of fencers">
+                        <option  value={{fencer.id}} *ngIf="fencer.id != fencer1_id.value">{{fencer.name}}</option>
+                    </ng-container>
+                </select>
+            </div>
+            <div class="col-12" *ngIf="fencer1_id.value && fencer2_id.value">
+                <label for="winner">Select the winner</label>
+                <select name="winner" ngModel class="custom-select shadow mb-5 bg-white rounded" id="winner" required #winner="ngModel">
+                    <option selected disabled value="">--- Empty ---</option>
+                    <option value=1>{{fencers[fencer1_id.value-1].name}}</option>
+                    <option value=2>{{fencers[fencer2_id.value-1].name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-group" *ngIf="form.valid">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </fieldset>
+</form>
