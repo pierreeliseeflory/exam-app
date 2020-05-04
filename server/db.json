@@ -1,0 +1,79 @@
+{
+  "fencer": [
+    {
+      "id": 1,
+      "name": "Flory",
+      "level": "beginner"
+    },
+    {
+      "id": 2,
+      "name": "Dutreuilh",
+      "level": "intermediate"
+    },
+    {
+      "id": 3,
+      "name": "Szilagyi",
+      "level": "pro"
+    },
+    {
+      "id": 4,
+      "name": "Sang-uk",
+      "level": "pro"
+    },
+    {
+      "id": 5,
+      "name": "Lopez",
+      "level": "pro"
+    }
+  ],
+  "match": [
+    {
+      "id": 1,
+      "fencer1_id": 1,
+      "fencer2_id": 2,
+      "winner": 2
+    },
+    {
+      "id": 2,
+      "fencer1_id": 1,
+      "fencer2_id": 3,
+      "winner": 2
+    },
+    {
+      "id": 3,
+      "fencer1_id": 2,
+      "fencer2_id": 3,
+      "winner": 2
+    },
+    {
+      "id": 4,
+      "fencer1_id": "1",
+      "fencer2_id": "2",
+      "winner": "1"
+    },
+    {
+      "id": 5,
+      "fencer1_id": "5",
+      "fencer2_id": "1",
+      "winner": "1"
+    },
+    {
+      "id": 6,
+      "fencer1_id": "5",
+      "fencer2_id": "2",
+      "winner": "1"
+    },
+    {
+      "id": 7,
+      "fencer1_id": "5",
+      "fencer2_id": "3",
+      "winner": "1"
+    },
+    {
+      "id": 8,
+      "fencer1_id": "5",
+      "fencer2_id": "4",
+      "winner": "1"
+    }
+  ]
+}
